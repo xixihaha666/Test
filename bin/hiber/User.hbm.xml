@@ -1,0 +1,13 @@
+<!DOCTYPE hibernate-mapping PUBLIC 
+				    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+				    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+				<hibernate-mapping>
+					<class name="hiber.User" table="users">
+						<id name="id" column="id" type="int">
+						<generator class="identity"/><!-- id 的生成方式（规则）-->
+						</id>
+						
+						<property name="name" column="userName" type="string"/>
+						<property name="address" column="address" type="string"/>
+					</class>
+				</hibernate-mapping>

@@ -1,0 +1,36 @@
+<!DOCTYPE hibernate-configuration PUBLIC
+					"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+					"http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+				<hibernate-configuration>
+					<session-factory>
+						<!-- 配置jdbc的信息 -->
+						<property name="hibernate.connection.driver_class">org.gjt.mm.mysql.Driver </property>
+						<property name="hibernate.connection.url">jdbc:mysql:///hibernate</property>
+						<property name="hibernate.connection.username">root</property>
+						<property name="hibernate.connection.password"></property>
+						<!-- 配置默认格式（即sql语句的格式） -->
+						<property name="hibernate.format_sql">true</property>
+						<!-- 配置格式装换 -->
+						<property name="hibernate.hbm2ddl.auto">update</property>
+						
+						
+						<!-- 配置c3p0 -->
+						<!-- 连接池的最大值 -->	
+						<property name="hibernate.c3p0.max_size">20</property>
+						<!-- 连接池的最小值 -->
+						<property name="hibernate.c3p0.min_size">2</property>
+						<!-- 连接池的超时回收时间 -->
+						<property name="hibernate.c3p0.timeout">5000</property>
+						<!-- 连接池的每次增加个数 -->
+						<property name="hibernate.c3p0.acquire_increment">2</property>
+						<!-- 连接池的初始化大小 -->
+						<property name="hibernate.c3p0.init_size">5</property>
+						
+						<!-- 方言 -->
+						<property name="hibernate.dialect">org.hibernate.dialect.MySQL5InnoDBDialect</property>
+						
+						
+					  	<!-- 添加映射文件 -->
+					  	<mapping  resource="hiber/User.hbm.xml" />
+					</session-factory>
+				</hibernate-configuration>
